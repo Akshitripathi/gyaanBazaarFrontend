@@ -1,0 +1,91 @@
+
+/*-------------online---------*/
+
+#heading-online h1
+{
+  margin-top: 80px;
+  font-size: 35px;
+  color: #1eb2a6;
+  font-style: italic;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+#heading-online h3
+{
+  margin-bottom: 30px;
+  font-size: 55px;
+  
+}
+
+.container-online{
+  max-width: 85%;
+  margin: auto;
+}
+
+.online {
+  text-align: center;
+}
+.online .box {
+  box-shadow: 0 5px 25px -2px rgba(0, 0, 0, 0.309);
+  background-color: #fff;
+  padding: 30px 20px;
+  transition: 0.5s;
+  
+}
+.online .img {
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  position: relative;
+}
+.online img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.online h1 {
+  font-weight: 500;
+  font-size: 20px;
+  margin: 20px 0;
+  line-height: 30px;
+}
+.online span {
+  background-color: #f3f1f1;
+  padding: 5px 20px;
+  font-weight: 500;
+  font-size: 15px;
+  color:  #1eb2a6;
+  border-radius: 5px;
+}
+.online .box .show {
+  opacity: 0;
+}
+.online .box:hover {
+  background-color:  #1eb2a6b9;
+  border-radius: 19px;
+  cursor: pointer;
+}
+.online .box:hover .show {
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.online .box:hover h1 {
+  color: #fff;
+}
+
+
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 20px;
+}
+/*-------------online---------*/
+@media screen and (max-width: 768px) {
+  .grid3
+  {
+    grid-template-columns: repeat(2, 1fr);
+
+  }
+}
