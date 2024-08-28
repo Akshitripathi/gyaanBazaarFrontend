@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
-import './LogSign.css';
+import '../login/LogSig.css';
 
 const Login = () => {
   const [isSignUp, setIsSignUp] = useState(false);
@@ -25,7 +25,7 @@ const Login = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent the default form submission behavior
+    e.preventDefault(); 
 
     try {
       const endpoint = isSignUp ? 'http://localhost:3000/api/users/register' : 'http://localhost:3000/api/users/login';
@@ -43,7 +43,7 @@ const Login = () => {
         console.log(data.message); 
         alert('Login successfull');
 
-        navigate('/profile', { state: { user: { username: formData.username, email: formData.email } } });
+        navigate('/home', { state: { user: { username: formData.username, email: formData.email } } });
       } else {
         
         setErrors(data.error); 
