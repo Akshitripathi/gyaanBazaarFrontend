@@ -62,7 +62,7 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link to="/blog">
+              <Link to="/book">
                 <FaBook className="nav-icon" /> Book Nest
               </Link>
             </li>
@@ -115,7 +115,7 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/profile" onClick={handleLinkClick}>
+                <Link to="/Profile" onClick={handleLinkClick}>
                   <FaUser className="nav-icon" /> Profile
                 </Link>
               </li>

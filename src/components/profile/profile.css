@@ -1,0 +1,151 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.profile {
+  padding: 20px;
+  margin: auto;
+}
+
+/* Profile Container */
+.profile-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* Profile Card */
+.profile-card {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.profile-picture {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  margin-left: -20rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #e4e6e8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e0e0e0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease;
+  cursor: pointer;
+}
+
+.profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.default-picture {
+  width: 100%;
+  height: 100%;
+  margin-left: -100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #dbdfe4;
+}
+
+.profile-info {
+  margin-top: -150px;
+  font-size: 29px;
+  padding-left: 20px;
+  text-align: center;
+}
+
+.profile-info h2 ,h4{
+    margin-left: 150px;
+}
+
+.profile .btn edit-btn{
+    margin-left: -150px;
+
+}
+
+.recent-uploads-card {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+}
+
+.profile .btn {
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #6ad8db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile .btn:hover {
+  background-color: #6ad8db;
+  transform: translateY(-2px);
+}
+
+
+@media (max-width: 768px) {
+  .profile-container {
+    flex-direction: column;
+  }
+
+  .profile-card {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,86 @@
+.book-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .filter-bar {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .filter-bar label {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  
+  .filter-bar select {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .book-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between book items */
+  }
+  
+  .book-item {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .book-item h2 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .book-item p {
+    margin: 5px 0 0;
+    color: #555;
+  }
+
+
+.sub-subject {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 5px;
+    display: inline-block;
+  }
+  
+  .sub-subject:hover {
+    background-color: #0056b3;
+  }
+  
+  .sub-subject-list {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .sub-subject-item {
+    background-color: #f0f0f0;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .sub-subject-item:hover {
+    background-color: #e0e0e0;
+  }

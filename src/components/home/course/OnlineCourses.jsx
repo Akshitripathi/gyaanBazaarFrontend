@@ -1,6 +1,6 @@
 import React from "react";
 import "./courses.css";
-// import Heading from "../common/heading/Heading";
+
 
 const OnlineCourses = () => {
   return (
