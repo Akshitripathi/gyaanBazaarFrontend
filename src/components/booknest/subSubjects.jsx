@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './subsubjects.css';
-
+import Footer from '../footer/Footer';
 const SubSubjects = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -21,6 +21,7 @@ const SubSubjects = () => {
           </div>
         ))}
       </div>
+      <Footer />
     </div>
   );
 };

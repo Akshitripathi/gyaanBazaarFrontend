@@ -8,33 +8,41 @@ body {
 
 .profile {
   padding: 20px;
+  background-image: url('./profilebg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   margin: auto;
 }
 
-/* Profile Container */
 .profile-container {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
 }
 
-/* Profile Card */
+
 .profile-card {
   flex: 1;
-  background-color: #fff;
+  background-color: #ffffff9c;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 20px;
   display: flex;
+  height: 400px;
   flex-direction: column;
   align-items: center;
   margin-right: 20px;
+  margin-bottom: 1.5rem;
+}
+.profile-card:hover{
+  transform: translateY(-3px);
 }
 
 .profile-picture {
   position: relative;
   width: 220px;
   height: 220px;
+  margin-top: 3rem;
   margin-left: -20rem;
   border-radius: 50%;
   overflow: hidden;
@@ -57,50 +65,64 @@ body {
 .default-picture {
   width: 100%;
   height: 100%;
-  margin-left: -100px;
+  margin-left: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
+  font-size: 100px;
   font-weight: bold;
-  color: #fff;
+  color: #43c6c1;
   background-color: #dbdfe4;
 }
 
 .profile-info {
   margin-top: -150px;
-  font-size: 29px;
-  padding-left: 20px;
+  font-size: 24px;
+  padding-left: 110px;
   text-align: center;
 }
 
-.profile-info h2 ,h4{
+.profile-info h2 {
     margin-left: 150px;
+    margin-top: -3rem;
+    font-size: 40px;
+    font-weight: 700;
+    padding-top: 1rem;
+}
+
+.profile-info h4 {
+  margin-left: 150px;
+  font-size: 20px;
+  font-weight: 700;
+  padding-top: 1rem;
 }
 
 .profile .btn edit-btn{
     margin-left: -150px;
+    margin-top: 2rem;
 
 }
 
 .recent-uploads-card {
   flex: 1;
-  background-color: #fff;
+  background-color: #ffffff9c;
   border-radius: 8px;
+  margin-bottom: 1.5rem;
+
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 20px;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.recent-uploads-card:hover{
+  transform: translateY(-3px);
 }
+
+.recent-uploads-card h2{
+  font-size: 30px;
+  font-weight: 900;
+}
+
+
 
 
 .form-group {
@@ -122,10 +144,12 @@ body {
 }
 
 .profile .btn {
+  margin-top: 4rem;
   padding: 10px 15px;
   font-size: 16px;
+  font-weight: 700;
   background-color: #6ad8db;
-  color: white;
+  color: rgb(48, 44, 44);
   border: none;
   border-radius: 5px;
   cursor: pointer;

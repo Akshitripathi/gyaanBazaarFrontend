@@ -1,6 +1,9 @@
-import React, { useState } from "react";
-import { FaUser, FaLock, FaFacebook, FaTwitter, FaGoogle, FaLinkedinIn, FaEnvelope, FaPhone, FaCalendarAlt } from "react-icons/fa";
-import { useNavigate } from "react-router-dom"; 
+import React, { useState, useContext } from "react";
+import {
+  FaUser, FaLock, FaFacebook, FaTwitter, FaGoogle, FaLinkedinIn, FaEnvelope, FaPhone, FaCalendarAlt,
+} from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import { UserContext } from "../userContext"; // Ensure this is correctly imported
 import './LogSig.css';
 
 const Login = () => {
@@ -14,13 +17,16 @@ const Login = () => {
   });
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
+  const { setUser } = useContext(UserContext);
 
   const handleSignUpClick = () => {
     setIsSignUp(true);
+    setErrors({});
   };
 
   const handleSignInClick = () => {
     setIsSignUp(false);
+    setErrors({});
   };
 
   const handleInputChange = (e) => {
@@ -29,7 +35,7 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     try {
       const endpoint = isSignUp
         ? 'http://localhost:3000/api/users/register'
@@ -41,20 +47,22 @@ const Login = () => {
         },
         body: JSON.stringify(formData),
       });
-  
+
       const contentType = response.headers.get("content-type");
-  
+
       let data;
       if (contentType && contentType.indexOf("application/json") !== -1) {
-        data = await response.json(); 
+        data = await response.json();
       } else {
-        data = await response.text(); 
+        data = await response.text();
       }
-  
+
       if (response.ok) {
+        setUser(data.data || formData); // Set user in context
+        localStorage.setItem('user', JSON.stringify(data.data || formData)); // Store in localStorage
         console.log(data.message || data);
         alert('Login successful');
-        navigate('/profile', { state: { user: formData } });
+        navigate('/profile', { state: { user: data.data || formData } });
       } else {
         setErrors({ general: data.error || data });
       }
@@ -63,7 +71,6 @@ const Login = () => {
       setErrors({ general: 'An error occurred. Please try again later.' });
     }
   };
-  
 
   return (
     <div className="login">
@@ -177,7 +184,7 @@ const Login = () => {
             </form>
           </div>
         </div>
-    
+
         <div className="panels-container">
           <div className="panel left-panel">
             <div className="content">
@@ -187,9 +194,9 @@ const Login = () => {
                 Sign up
               </button>
             </div>
-            <img src="../login/login.png" className="image" alt="login" />
+            <img src="./images/login.png" className="image" alt="login" />
           </div>
-    
+
           <div className="panel right-panel">
             <div className="content">
               <h3>One of us?</h3>
@@ -198,7 +205,7 @@ const Login = () => {
                 Sign in
               </button>
             </div>
-            <img src="../login/login.png" className="image" alt="login" />
+            <img src="./images/login.png" className="image" alt="login" />
           </div>
         </div>
       </div>

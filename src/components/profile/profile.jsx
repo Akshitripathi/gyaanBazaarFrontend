@@ -1,51 +1,71 @@
-import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useState, useEffect, useContext } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { UserContext } from '../userContext';
 import './profile.css';
 import Header from '../navbar/header';
 import Modal from './Modal';
+import Footer from '../footer/Footer';
 
 const Profile = () => {
   const location = useLocation();
-  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
+  const { user: contextUser, setUser: setContextUser } = useContext(UserContext);
+  const [user, setUser] = useState(contextUser || null);
   const [profilePicture, setProfilePicture] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [newMobile, setNewMobile] = useState('');
   const [newEmail, setNewEmail] = useState('');
   const [newUsername, setNewUsername] = useState('');
-  const [newProfilePicture, setNewProfilePicture] = useState(null);
+  const [newDOB, setNewDOB] = useState(''); // New state for DOB
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchUserData = async () => {
-      try {
-        const username = location.state?.user?.user_name;
-        const response = await fetch(`http://localhost:3000/api/users/${username}`);
-        
-        if (!response.ok) {
-          const errorText = await response.text();
-          throw new Error(`Network response was not ok. Status: ${response.status}. Response: ${errorText}`);
-        }
-
-        const data = await response.json();
-        setUser(data);
-        setNewUsername(data.user_name);
-        setNewEmail(data.user_email);
-        setNewMobile(data.user_mobile);
-        setLoading(false);
-      } catch (error) {
-        console.error('Error fetching user data:', error);
-        setError('Failed to load user data.');
-        setLoading(false);
+  const fetchUserData = async () => {
+    try {
+      const username = location.state?.user?.user_name;
+      const response = await fetch(`http://localhost:3000/api/users/${username}`);
+      
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(`Network response was not ok. Status: ${response.status}. Response: ${errorText}`);
       }
-    };
 
-    fetchUserData();
-  }, [location.state?.user?.user_name]);
+      const data = await response.json();
+      setUser(data);
+      setNewUsername(data.user_name);
+      setNewEmail(data.user_email);
+      setNewMobile(data.user_mobile);
+      setNewDOB(data.user_dob); // Initialize new DOB state
+      setContextUser(data);  // Set context user data
+      localStorage.setItem('user', JSON.stringify(data));  // Save to localStorage
+      setLoading(false);
+    } catch (error) {
+      console.error('Error fetching user data:', error);
+      setError('Failed to load user data.');
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    const storedUser = JSON.parse(localStorage.getItem('user'));
+    
+    if (storedUser) {
+      setUser(storedUser);
+      setNewUsername(storedUser.user_name);
+      setNewEmail(storedUser.user_email);
+      setNewMobile(storedUser.user_mobile);
+      setNewDOB(storedUser.user_dob); // Initialize new DOB state
+      setLoading(false);
+    } else if (location.state?.user?.user_name) {
+      fetchUserData();
+    } else {
+      setError('No user data available');
+      setLoading(false);
+    }
+  }, []);
 
   const handleProfilePictureChange = (e) => {
     setProfilePicture(URL.createObjectURL(e.target.files[0]));
-    setNewProfilePicture(e.target.files[0]); 
   };
 
   const handleEditProfile = () => {
@@ -57,28 +77,33 @@ const Profile = () => {
   };
 
   const handleSaveChanges = async () => {
-    const formData = new FormData();
-    if (newUsername !== user.user_name) formData.append('user_name', newUsername);
-    if (newEmail !== user.user_email) formData.append('user_email', newEmail);
-    if (newMobile !== user.user_mobile) formData.append('user_mobile', newMobile);
-    if (newProfilePicture) formData.append('profilePicture', newProfilePicture); 
+    const formData = {
+      user_name: newUsername,
+      user_email: newEmail,
+      user_mobile: newMobile,
+      user_dob: newDOB, // Include new DOB state
+    };
 
     try {
       const response = await fetch(`http://localhost:3000/api/users/${user.user_name}`, {
         method: 'PUT',
-        body: formData,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
 
-      const textResponse = await response.text(); 
-      console.log(textResponse);
+      const data = await response.json();
 
       if (!response.ok) {
-        const data = JSON.parse(textResponse); 
         alert(data.error || 'Error updating profile');
         return;
       }
 
       alert('Profile updated successfully');
+      setUser(data.data);
+      setContextUser(data.data);  // Update context
+      localStorage.setItem('user', JSON.stringify(data.data));  // Update localStorage
       setShowModal(false); 
     } catch (error) {
       console.error('Error updating profile:', error);
@@ -158,11 +183,21 @@ const Profile = () => {
               placeholder="Enter your mobile number"
             />
           </div>
+          <div className="form-group">
+            <label htmlFor="dob">Date of Birth:</label>
+            <input
+              type="date"
+              id="dob"
+              value={newDOB}
+              onChange={(e) => setNewDOB(e.target.value)}
+            />
+          </div>
           <button className="btn" onClick={handleSaveChanges}>
             Save Changes
           </button>
         </Modal>
       )}
+      <Footer/>
     </div>
   );
 };

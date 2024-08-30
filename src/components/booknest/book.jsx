@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import CourseDisplay from './courseDisplay';
 import Header from '../navbar/header';
-
+import Footer from '../footer/Footer';
 const Book = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -17,6 +17,7 @@ const Book = () => {
         />
       </div>
       <CourseDisplay searchTerm={searchTerm} />
+      <Footer />
     </div>
   );
 };
