@@ -30,6 +30,7 @@
   background-color: #fff;
   padding: 30px 20px;
   transition: 0.5s;
+  border-radius: 30px;
   
 }
 .online .img {
@@ -46,14 +47,15 @@
 .online h1 {
   font-weight: 500;
   font-size: 20px;
+  font-weight: 600;
   margin: 20px 0;
   line-height: 30px;
 }
 .online span {
-  background-color: #f3f1f1;
   padding: 5px 20px;
   font-weight: 500;
   font-size: 15px;
+  font-weight: 500;
   color:  #1eb2a6;
   border-radius: 5px;
 }
@@ -63,6 +65,7 @@
 .online .box:hover {
   background-color:  #1eb2a6b9;
   border-radius: 19px;
+
   cursor: pointer;
 }
 .online .box:hover .show {
@@ -71,15 +74,19 @@
   top: 0;
   left: 0;
 }
-.online .box:hover h1 {
+.online .box:hover h1{
+  color: #fff;
+}
+.online .box:hover span{
   color: #fff;
 }
 
 
 .grid3 {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+  margin-bottom: 2rem;
 }
 
 

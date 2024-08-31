@@ -1,6 +1,8 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './subsubjects.css';
+import Header from '../navbar/header';
+
 import Footer from '../footer/Footer';
 const SubSubjects = () => {
   const location = useLocation();
@@ -12,6 +14,8 @@ const SubSubjects = () => {
   };
 
   return (
+    <div className='subSubjects'>
+    <Header/>
     <div className="subsubjects-container">
       <h1>Sub-Subjects</h1>
       <div className="subsubjects-list">
@@ -21,7 +25,9 @@ const SubSubjects = () => {
           </div>
         ))}
       </div>
-      <Footer />
+      
+    </div>
+    <Footer />
     </div>
   );
 };

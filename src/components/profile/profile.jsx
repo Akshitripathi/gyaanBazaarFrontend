@@ -145,10 +145,7 @@ const Profile = () => {
             Edit Profile
           </button>
         </div>
-        <div className="recent-uploads-card">
-          <h2>Recent Uploads</h2>
-          {/* Display recent uploads here */}
-        </div>
+        
       </div>
       {showModal && (
         <Modal onClose={handleCloseModal}>
