@@ -15,9 +15,12 @@ const SubSubjects = () => {
 
   return (
     <div className='subSubjects'>
+    <div className='header-class'>
     <Header/>
+    </div>
+    
     <div className="subsubjects-container">
-      <h1>Sub-Subjects</h1>
+      <h1>Sub Subjects</h1>
       <div className="subsubjects-list">
         {subSubjects.map((subSubject, index) => (
           <div className="subsubject-item" key={index} onClick={() => handleSubSubjectClick(subSubject)}>
