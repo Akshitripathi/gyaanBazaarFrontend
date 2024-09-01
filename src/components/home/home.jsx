@@ -1,23 +1,21 @@
-import React from "react";
-import Header from "../navbar/home_header";
+import React, { useEffect } from "react";
 import AboutCard from "./about/AboutCard";
 import Hblog from "./event/Hevent";
 import HAbout from "./course/HAbout";
 import Hero from "./hero/hero";
-import Footer from "../footer/Footer";
+import Mart from "./mart/Mart";
 import "./home.css";
 
 const Home = () => {
   return (
-    <div className="home">
-      <Header />
+    <>
       <Hero />
       <AboutCard />
-      <HAbout />
+      <HAbout />    
       <Hblog />
-      <Footer />
-    </div>
+      <Mart />
+    </>
   );
-}
+};
 
 export default Home;

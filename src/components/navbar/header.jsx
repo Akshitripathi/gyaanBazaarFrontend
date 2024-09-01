@@ -1,16 +1,13 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { FaBars, FaTimes, FaHome, FaInfoCircle, FaCalendarAlt, FaBook, FaStore, FaPhone, FaUser } from 'react-icons/fa';
-import { IoMdLogOut } from 'react-icons/io';
-import './header.css';
-import { UserContext } from '../userContext'; // Update path as necessary
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { FaBars, FaTimes, FaHome, FaInfoCircle, FaCalendarAlt, FaBook, FaStore, FaPhone, FaUser } from "react-icons/fa";
+import Head from "./head";
+import "./header.css";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showToggle, setShowToggle] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
-  const { setUser } = useContext(UserContext);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,9 +18,9 @@ const Header = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -35,14 +32,9 @@ const Header = () => {
     setIsOpen(false);
   };
 
-  const handleLogout = () => {
-    setUser(null); // Clear user context
-    localStorage.removeItem('user'); // Clear local storage
-    navigate('/'); // Redirect to home or login page
-  };
-
   return (
     <>
+      {/* <Head /> */}
       <header>
         <nav className="navbar">
           {showToggle && (
@@ -50,9 +42,12 @@ const Header = () => {
               {isOpen ? <FaTimes /> : <FaBars />}
             </button>
           )}
-          <ul className={isOpen ? 'nav-links open' : 'nav-links'} onClick={handleLinkClick}>
+          <ul
+            className={isOpen ? "nav-links open" : "nav-links"}
+            onClick={handleLinkClick}
+          >
             <li>
-              <Link to="/home">
+              <Link to="/">
                 <FaHome className="nav-icon" /> Home
               </Link>
             </li>
@@ -62,12 +57,12 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link to="/team">
+              <Link to="/event">
                 <FaCalendarAlt className="nav-icon" /> Events
               </Link>
             </li>
             <li>
-              <Link to="/book">
+              <Link to="/blog">
                 <FaBook className="nav-icon" /> Book Nest
               </Link>
             </li>
@@ -86,16 +81,11 @@ const Header = () => {
                 <FaUser className="nav-icon" /> Profile
               </Link>
             </li>
-            <li className="profile-item" onClick={handleLogout}>
-              <a href="#logout">
-                <IoMdLogOut className="nav-icon" /> Logout
-              </a>
-            </li>
           </ul>
-          <div className={isOpen ? 'sidebar open' : 'sidebar'}>
+          <div className={isOpen ? "sidebar open" : "sidebar"}>
             <ul>
               <li>
-                <Link to="/home" onClick={handleLinkClick}>
+                <Link to="/" onClick={handleLinkClick}>
                   <FaHome className="nav-icon" /> Home
                 </Link>
               </li>
@@ -105,12 +95,12 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/team" onClick={handleLinkClick}>
+                <Link to="/event" onClick={handleLinkClick}>
                   <FaCalendarAlt className="nav-icon" /> Events
                 </Link>
               </li>
               <li>
-                <Link to="/book" onClick={handleLinkClick}>
+                <Link to="/blog" onClick={handleLinkClick}>
                   <FaBook className="nav-icon" /> Book Nest
                 </Link>
               </li>
@@ -128,11 +118,6 @@ const Header = () => {
                 <Link to="/profile" onClick={handleLinkClick}>
                   <FaUser className="nav-icon" /> Profile
                 </Link>
-              </li>
-              <li className="profile-item" onClick={handleLogout}>
-                <a href="#logout">
-                  <IoMdLogOut className="nav-icon" /> Logout
-                </a>
               </li>
             </ul>
           </div>

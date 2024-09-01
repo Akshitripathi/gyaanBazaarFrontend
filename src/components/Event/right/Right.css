@@ -1,0 +1,36 @@
+/* Right Side Section */  
+.event-right-section {
+  flex: 1; /* Adjust width ratio */
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px; /* Space between sections */
+}
+
+/* Calendar Section */
+.event-calendar-section {
+  margin-bottom: 20px; 
+  margin-left: 30px;
+  padding: 0; /* Removed padding to reduce extra space */
+}
+
+/* To-Do List Section */
+.event-todo-section {
+  background-color: #fff;
+  padding: 0; /* Removed padding to reduce extra space */
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-left: 60px;
+  max-width: 60%;
+  height: auto;
+}
+
+.event-todo-section h3 {
+  padding: 15px; /* Added padding to the title */
+  margin-bottom: 10px; /* Space below title */
+}
+
+.event-todo-section ul {
+  list-style: none;
+  padding: 15px; /* Added padding to the list */
+  margin: 0; /* Resetting margin */
+}

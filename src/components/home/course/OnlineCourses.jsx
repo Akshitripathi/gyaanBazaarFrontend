@@ -1,6 +1,6 @@
 import React from "react";
 import "./courses.css";
-
+// import Heading from "../common/heading/Heading";
 
 const OnlineCourses = () => {
   return (
@@ -61,54 +61,54 @@ const OnlineCourses = () => {
               <h1>Information Software</h1>
               <span>60 Courses</span>
             </div>
-            <div className='box'>
+            {/* <div className='box'>
               <div className='img'>
                 <img src="./images/courses/online/o7.png" alt="Health & Fitness" />
                 <img src="./images/courses/online/o7.1.png" alt="Health & Fitness Hover" className='show' />
               </div>
               <h1>Health & Fitness</h1>
               <span>10 Courses</span>
-            </div>
-            <div className='box'>
+            </div> */}
+            {/* <div className='box'>
               <div className='img'>
                 <img src="./images/courses/online/o8.png" alt="Marketing" />
                 <img src="./images/courses/online/o8.1.png" alt="Marketing Hover" className='show' />
               </div>
               <h1>Marketing</h1>
               <span>30 Courses</span>
-            </div>
-            <div className='box'>
+            </div> */}
+            {/* <div className='box'>
               <div className='img'>
                 <img src="./images/courses/online/o9.png" alt="Graphic Design" />
                 <img src="./images/courses/online/o9.1.png" alt="Graphic Design Hover" className='show' />
               </div>
               <h1>Graphic Design</h1>
               <span>80 Courses</span>
-            </div>
-            <div className='box'>
+            </div> */}
+            {/* <div className='box'>
               <div className='img'>
                 <img src="./images/courses/online/o10.png" alt="Music" />
                 <img src="./images/courses/online/o10.1.png" alt="Music Hover" className='show' />
               </div>
               <h1>Music</h1>
               <span>120 Courses</span>
-            </div>
-            <div className='box'>
+            </div> */}
+            {/* <div className='box'>
               <div className='img'>
                 <img src="./images/courses/online/o11.png" alt="Business Administration" />
                 <img src="./images/courses/online/o11.1.png" alt="Business Administration Hover" className='show' />
               </div>
               <h1>Business Administration</h1>
               <span>17 Courses</span>
-            </div>
-            <div className='box'>
+            </div> */}
+            {/* <div className='box'>
               <div className='img'>
                 <img src="./images/courses/online/o12.png" alt="Web Management" />
                 <img src="./images/courses/online/o12.1.png" alt="Web Management Hover" className='show' />
               </div>
               <h1>Web Management</h1>
               <span>17 Courses</span>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
