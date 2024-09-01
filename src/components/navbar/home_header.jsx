@@ -47,7 +47,7 @@ const Header = () => {
             onClick={handleLinkClick}
           >
             <li>
-              <Link to="/">
+              <Link to="/home">
                 <FaHome className="nav-icon" /> Home
               </Link>
             </li>
@@ -57,7 +57,7 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link to="/team">
+              <Link to="/event">
                 <FaCalendarAlt className="nav-icon" /> Events
               </Link>
             </li>
@@ -95,7 +95,7 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/team" onClick={handleLinkClick}>
+                <Link to="/event" onClick={handleLinkClick}>
                   <FaCalendarAlt className="nav-icon" /> Events
                 </Link>
               </li>
@@ -118,6 +118,11 @@ const Header = () => {
                 <Link to="/profile" onClick={handleLinkClick}>
                   <FaUser className="nav-icon" /> Profile
                 </Link>
+              </li>
+              <li className="profile-item" onClick={handleLogout}>
+                <a href="#logout">
+                  <IoMdLogOut className="nav-icon" /> Logout
+                </a>
               </li>
             </ul>
           </div>
