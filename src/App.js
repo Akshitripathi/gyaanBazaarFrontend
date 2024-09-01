@@ -9,6 +9,8 @@ import Book from "./components/booknest/book";
 import SubSubjects from "./components/booknest/subSubjects";
 import CourseBooks from "./components/booknest/courseBooks";
 import { UserContext } from "./components/userContext";
+import EventPage from "./components/Event/EventPage";
+import EventDetails from "./components/Event/viewDetails/EventDetails";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -18,6 +20,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} /> 
           <Route path="/home" element={<Home />} />
+          <Route path="/event" element={<EventPage />} />
+          <Route path="/event/:id" element={<EventDetails />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/book" element={<Book />} />
           <Route path="/subsubjects/:id" element={<SubSubjects />} />
