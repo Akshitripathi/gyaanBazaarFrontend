@@ -347,6 +347,8 @@
   background-color: #1eb2a6;
 }
 
+
+
 .speaker-section {
   margin-top: 40px;
 }
@@ -372,17 +374,18 @@
 
 .speaker-cards {
   display: flex;
-  gap: 50px;
+  /* gap: 50px; */
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 60px;
+  margin-top: 30px;
 }
 
 .speaker-card {
   width: 240px;
   height: auto;
   background: #f9f9f9;
-  padding: 15px;
+  padding: 25px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.275);
   text-align: center;
@@ -391,18 +394,28 @@
   align-items: center;
 }
 
-.speaker-card img {
-  width: 200px;
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
-  margin-bottom: 10px;
+/* .speaker-card p {
+  margin: 10px 0;
+} */
+
+.speaker-card h2{
+  font-size: 28px; 
+  font-weight: bold;
+  font-style: italic;
+  font-family: 'Forum';
 }
 
-.speaker-card h3 {
+.speaker-card p{
+  font-size: 19px; 
+  color: #535252;
+  margin-top: 15px;
+}
+
+/* .speaker-card h3 {
   font-size: 18px;
   margin: 10px 0;
-}
+} */
+
 
 @media (max-width: 768px) {
   .custom-header {

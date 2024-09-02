@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -61,11 +59,7 @@ const EventDetails = () => {
         universityRollNumber,
       });
 
-    //   if (response.status === 201) {
-    //     alert('Registration successful!');
-    //     handleCloseForm();
-    //   }
-    if (response.status === 201) {
+      if (response.status === 201) {
         // Send confirmation email
         await axios.post('http://localhost:5000/api/registrations/send-email', {
           email,
@@ -104,7 +98,7 @@ const EventDetails = () => {
       <div className="custom-bottom-details">
         <div className="custom-details">
           <div className="custom-description">
-            <p>{event.eventDescription}</p>
+            <p><strong>Description about the event:</strong><br/>{event.eventDescription}</p>
           </div>
           <div className="custom-info">
             <p>
@@ -165,8 +159,8 @@ const EventDetails = () => {
           {event.speakers && event.speakers.length > 0 ? (
             event.speakers.map((speaker) => (
               <div className="speaker-card" key={speaker.name}>
-                <img src={`http://localhost:5000/${speaker.image}`} alt={speaker.name} />
-                <p>{speaker.name}</p>
+                <h2>Name:{speaker.name}</h2>
+                <p>Designation:{speaker.designation}</p>
               </div>
             ))
           ) : (

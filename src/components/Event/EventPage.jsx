@@ -23,19 +23,34 @@ const EventPage = () => {
     }
   };
 
+  // const handleAddEvent = async (eventData) => {
+  //   try {
+  //     await axios.post('http://localhost:5000/api/events', eventData, {
+  //       headers: {
+  //         'Content-Type': 'multipart/form-data',
+  //       },
+  //     });
+  //     fetchEvents(); // Refresh events list
+  //     toggleForm(); // Close form after submission
+  //   } catch (err) {
+  //     console.error("Error submitting form:", err);
+  //   }
+  // };
+
   const handleAddEvent = async (eventData) => {
     try {
-      await axios.post('http://localhost:5000/api/events', eventData, {
+      const response = await axios.post('http://localhost:5000/api/events', eventData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
       });
-      fetchEvents(); // Refresh events list
+      setEvents((prevEvents) => [...prevEvents, response.data]); // Update state directly
       toggleForm(); // Close form after submission
     } catch (err) {
       console.error("Error submitting form:", err);
     }
   };
+  
 
   useEffect(() => {
     fetchEvents();

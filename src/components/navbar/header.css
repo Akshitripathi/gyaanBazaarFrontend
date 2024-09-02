@@ -36,13 +36,14 @@ header {
   background-color: rgba(255, 255, 255, 0.699);
   margin: 20px 30px;
   height: 70px;
+ 
 }
 
 header,
 .navbar,
 .container-head {
   position: relative;
-  z-index: 1; /* Ensure these elements are below the sidebar */
+  z-index: 1; 
 }
 
 .navbar {
@@ -188,5 +189,8 @@ header,
 
   .profile-item {
     display: none; /* Hide profile item in mobile view */
+  }
+  header {
+    background-color: transparent; /* Keep the header transparent on small screens */
   }
 }

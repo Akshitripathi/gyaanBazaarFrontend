@@ -12,7 +12,7 @@
 //         <div className='grid2'>
 //           <div className='items shadow'>
 //             <div className='img'>
-//               <img src="../images/events/b1.webp" alt='Event 1' />
+//               <img src="../images/events/b1.png" alt='Event 1' />
 //             </div>
 //             <div className='text'>
 //               <div className='admin flexSB'>
@@ -110,19 +110,19 @@ const Hblog = () => {
       <div className='eventpart-bottompart'>
         <div className='eventpart-bottompart-left'>
           <div className='eventpart-bottompart-style'>
-            <img src="../images/events/b3.webp" alt="" />
+            <img src="../images/events/event1.png" alt="" />
             <h1>Networking Mixer</h1>
           </div>
         </div>
         <div className='eventpart-bottompart-middle'>
           <div className='eventpart-bottompart-style'>
-            <img src="../images/events/b2.webp" alt="" />
+            <img src="../images/events/event2.png" alt="" />
             <h1>Career Development Workshop</h1>
           </div>
         </div>
         <div className='eventpart-bottompart-right'>
           <div className='eventpart-bottompart-style'>
-            <img src="../images/events/b1.webp" alt="" />
+            <img src="../images/events/event3.png" alt="" />
             <h1>Tech Innovations Seminar</h1>
           </div>
         </div>

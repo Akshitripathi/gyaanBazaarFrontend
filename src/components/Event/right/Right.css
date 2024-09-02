@@ -14,9 +14,9 @@
 }
 
 /* To-Do List Section */
-.event-todo-section {
+/* .event-todo-section {
   background-color: #fff;
-  padding: 0; /* Removed padding to reduce extra space */
+  padding: 0; 
   border-radius: 6px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   margin-left: 60px;
@@ -25,12 +25,13 @@
 }
 
 .event-todo-section h3 {
-  padding: 15px; /* Added padding to the title */
-  margin-bottom: 10px; /* Space below title */
+  padding: 15px; 
+  margin-bottom: 10px; 
 }
 
 .event-todo-section ul {
   list-style: none;
-  padding: 15px; /* Added padding to the list */
-  margin: 0; /* Resetting margin */
-}
+  padding: 15px; 
+  margin: 0; 
+} */
+

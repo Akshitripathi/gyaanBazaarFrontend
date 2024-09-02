@@ -11,23 +11,20 @@ const RightSection = ({ selectedDate, setSelectedDate, setShowFilteredEvents }) 
 
   return (
     <div className="event-right-section">
-      {/* Calendar Section */}
       <div className="event-calendar-section">
         <Calendar
           onChange={handleDateChange}
           value={selectedDate}
         />
       </div>
-
-      {/* To-Do List Section */}
-      <div className="event-todo-section">
+      {/* <div className="event-todo-section">
         <h3>To do list</h3>
         <ul>
           <li>Online meeting with speakers - 05.04.2024</li>
           <li>Reserve Function Room - 08.04.2024</li>
           <li>Send Invites - 10.04.2024</li>
         </ul>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -2,12 +2,11 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  /* padding: 20px; */
   flex-wrap: wrap;
   margin-bottom: 40px;
 }
 
-.container-about{
+.container-about {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -27,7 +26,7 @@
 
 .right {
   flex: 1;
-  /* padding-left: 30px; */
+  padding: 0 20px;
 }
 
 #heading {
@@ -36,7 +35,7 @@
   font-size: 33px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-style: italic;
-  margin-left: 79px;
+  margin-left: 0;
 }
 
 .items {
@@ -47,8 +46,6 @@
 
 .item {
   background-color: #f8f8f8;
-  margin-left: 90px;
-  width: 80%;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -69,19 +66,68 @@
   background-color: #1eb2a6d3;
   color: #fff;
   cursor: pointer;
-  box-shadow: 0 5px 25px -2px rgb(0 0 0 / 6%);
 }
 
 .item:hover p {
   color: #fff;
 }
 
-.shadow {
-  box-shadow: 0 5px 25px -2px rgba(0, 0, 0, 0.251);
-  background-color: #fff;
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .aboutHome {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container-about {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left, .right {
+    flex: 1 1 100%;
+    padding: 0;
+  }
+
+  .left img {
+    width: 100%;
+    height: auto;
+  }
+
+  #heading {
+    text-align: center;
+  }
 }
 
-/*----------awrapper------------*/
+@media screen and (max-width: 480px) {
+  .item {
+    padding: 15px;
+  }
+
+  #heading {
+    font-size: 28px;
+  }
+}
+
+
+/* .margin {
+  margin-top: 37.3%;
+}
+ */
+
+ .margin {
+  margin-top: 75vh; /* Adjust this value as needed */
+}
+
+@media screen and (max-width: 768px) {
+  .margin {
+    margin-top: 5vh;
+  }
+}
+
+
+
+
 .awrapper {
   background-image: url("../../../../public/images/wrapabout.png");
   background-repeat: no-repeat;
@@ -115,45 +161,21 @@
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 30px;
 }
- 
+
 .flex {
   display: flex;
   align-items: center; /* Ensure proper alignment of images and text */
 }
 
-/*----------Responsive Design------------*/
+/* Responsive Design */
 @media screen and (max-width: 768px) {
-  .aboutHome {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .container-about {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .left, .right {
-    flex: 1 1 100%;
-    padding-left: 0;
-  }
-
-  .left img {
-    width: 100%;
-    height: auto;
-  }
-
-  #heading {
-    text-align: center;
-  }
-
   .grid {
-    grid-template-columns: repeat(2, 1fr); /* Adjust the grid for smaller screens */
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
   }
 
   .awrapper {
-    height: auto; /* Adjust height for better responsiveness */
+    height: auto;
   }
 
   .awrapper h1 {
@@ -178,4 +200,3 @@
     font-size: 14px;
   }
 }
-

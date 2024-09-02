@@ -1,12 +1,13 @@
+
+
 // import React, { useState } from "react";
 // import DatePicker from "react-datepicker";
 // import axios from "axios";
 // import "react-datepicker/dist/react-datepicker.css";
 // import "./EventForm.css";
 
-// const EventForm = ({ showForm, toggleForm }) => {
-//   const [formPage, setFormPage] = useState(1);
-//   const [formData, setFormData] = useState({
+// const EventForm = ({ showForm, toggleForm, onSubmit }) => {
+//   const initialFormData = {
 //     eventName: "",
 //     eventDate: new Date(),
 //     eventTime: "",
@@ -16,7 +17,15 @@
 //     eventDescription: "",
 //     numberOfSpeakers: 0,
 //     speakers: [],
-//   });
+//   };
+
+//   const [formPage, setFormPage] = useState(1);
+//   const [formData, setFormData] = useState(initialFormData);
+
+//   const resetForm = () => {
+//     setFormPage(1);
+//     setFormData(initialFormData);
+//   };
 
 //   const handleInputChange = (e) => {
 //     const { name, value } = e.target;
@@ -68,13 +77,8 @@
 //     formDataToSend.append('speakers', JSON.stringify(formData.speakers));
 
 //     try {
-//       await axios.post('http://localhost:5000/api/events', formDataToSend, {
-//         headers: {
-//           'Content-Type': 'multipart/form-data',
-//         },
-//       });
-//       onEventAdded(response.data); 
-//       toggleForm(); // Close form on submit
+//       await onSubmit(formDataToSend); 
+//       resetForm(); // Reset the form after successful submission
 //     } catch (err) {
 //       console.error("Error submitting form:", err);
 //     }
@@ -84,7 +88,13 @@
 //     showForm && (
 //       <div className="event-form-modal">
 //         <div className="event-form-content">
-//           <button className="event-close-btn" onClick={toggleForm}>
+//           <button
+//             className="event-close-btn"
+//             onClick={() => {
+//               resetForm(); // Reset the form when closing
+//               toggleForm();
+//             }}
+//           >
 //             ×
 //           </button>
 //           <h2>{formPage === 1 ? "Event Details" : "Event Description"}</h2>
@@ -170,7 +180,7 @@
 //                 />
 //               </div>
 //               {formData.speakers.map((speaker, index) => (
-//                 <div key={index} className="event-form-group">
+//                 <div key={index} className="speaker-form-group">
 //                   <label>Speaker {index + 1} Name:</label>
 //                   <input
 //                     type="text"
@@ -203,6 +213,18 @@
 // };
 
 // export default EventForm;
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -248,7 +270,7 @@ const EventForm = ({ showForm, toggleForm, onSubmit }) => {
     const numberOfSpeakers = parseInt(e.target.value);
     const speakers = Array.from({ length: numberOfSpeakers }, () => ({
       name: "",
-      image: null,
+      designation: "", // Changed from image to designation
     }));
     setFormData((prevData) => ({ ...prevData, numberOfSpeakers, speakers }));
   };
@@ -396,10 +418,11 @@ const EventForm = ({ showForm, toggleForm, onSubmit }) => {
                     value={speaker.name}
                     onChange={(e) => handleSpeakerChange(index, e)}
                   />
-                  <label>Speaker {index + 1} Image:</label>
+                  <label>Speaker {index + 1} Designation:</label>
                   <input
-                    type="file"
-                    name="image"
+                    type="text"
+                    name="designation"
+                    value={speaker.designation}
                     onChange={(e) => handleSpeakerChange(index, e)}
                   />
                 </div>

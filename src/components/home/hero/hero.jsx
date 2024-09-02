@@ -23,11 +23,9 @@ const Hero = () => {
             <h1>WELCOME TO GYAAN BAZAAR</h1>
             <h3>Your path to knowledge, expertly crafted.</h3>
             <p>Where the ordinary becomes extraordinary, and the future is shaped by the extraordinary.</p>
-            <div>
-              <button className='home-btn' onClick={handleSignUpClick}>
-                GET STARTED NOW <FaLongArrowAltRight />
-              </button>
-            </div>
+            <button className='home-getstarted-button' onClick={handleSignUpClick}>
+                LEARN MORE  <FaLongArrowAltRight />
+            </button>
           </div>
         </div>
       </section>

@@ -49,10 +49,10 @@
 }
 
 /* Existing styles */
-.event-page {
+/* .event-page {
   display: flex;
   transition: margin-left 0.3s ease;
-}
+} */
 
 .event-content {
   flex: 1;
@@ -65,4 +65,20 @@
   justify-content: space-between; /* Space between the two sections */
   padding: 20px;
   margin-top: 60px; /* Adjust based on your header or navbar height */
+}
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .event-main {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-image {
+    height: 200px; /* Further reduced height for very small screens */
+  }
+
+  .event-content {
+    padding: 5px;
+  }
 }
