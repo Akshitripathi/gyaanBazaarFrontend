@@ -11,6 +11,7 @@ import CourseBooks from "./components/booknest/courseBooks";
 import { UserContext } from "./components/userContext";
 import EventPage from "./components/Event/EventPage";
 import EventDetails from "./components/Event/viewDetails/EventDetails";
+import About from "./components/about/About";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -26,6 +27,8 @@ function App() {
           <Route path="/book" element={<Book />} />
           <Route path="/subsubjects/:id" element={<SubSubjects />} />
           <Route path="/courseBooks" element={<CourseBooks/>}/>
+  <Route path="/about-container" element={<About />} />
+     
         </Routes>
         
         </UserContext.Provider>
