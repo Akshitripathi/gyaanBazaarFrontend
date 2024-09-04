@@ -47,12 +47,12 @@ const Header = () => {
             onClick={handleLinkClick}
           >
             <li>
-              <Link to="/home">
+              <Link to="/">
                 <FaHome className="nav-icon" /> Home
               </Link>
             </li>
             <li>
-              <Link to="/courses">
+              <Link to="/about-container">
                 <FaInfoCircle className="nav-icon" /> About
               </Link>
             </li>
@@ -67,7 +67,7 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link to="/allcourses">
+              <Link to="/unimart">
                 <FaStore className="nav-icon" /> Unimart
               </Link>
             </li>
@@ -81,6 +81,12 @@ const Header = () => {
                 <FaUser className="nav-icon" /> Profile
               </Link>
             </li>
+            <li className="profile-item" onClick={handleLogout}>
+                <a href="#logout">
+                  <IoMdLogOut className="nav-icon" /> Logout
+                </a>
+            </li>
+            
           </ul>
           <div className={isOpen ? "sidebar open" : "sidebar"}>
             <ul>
@@ -90,7 +96,7 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/courses" onClick={handleLinkClick}>
+                <Link to="/about-container" onClick={handleLinkClick}>
                   <FaInfoCircle className="nav-icon" /> About
                 </Link>
               </li>
@@ -105,7 +111,7 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/allcourses" onClick={handleLinkClick}>
+                <Link to="/unimart" onClick={handleLinkClick}>
                   <FaStore className="nav-icon" /> Unimart
                 </Link>
               </li>
