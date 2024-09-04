@@ -68,6 +68,9 @@ const Unimart = () => {
       });
       alert('Product uploaded successfully!');
       setShowUploadModal(false);
+      const response = await axios.get('/api/products');
+      setProducts(response.data);
+      setFilteredProducts(response.data);
     } catch (error) {
       console.error('Failed to upload product:', error);
       alert('Failed to upload product.');
@@ -75,7 +78,6 @@ const Unimart = () => {
   };
 
   const handleAddToCart = (product) => {
-   
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     cart.push(product);
     localStorage.setItem('cart', JSON.stringify(cart));
@@ -97,20 +99,20 @@ const Unimart = () => {
             value={searchTerm}
             onChange={handleSearchChange}
           />
-          <button onClick={handleUploadClick}>Upload Product</button>
-          <button onClick={handleCartClick}>Go to Cart</button>
+          <button className="upload-btn" onClick={handleUploadClick}>Upload Product</button>
+          <button className="cart-btn" onClick={handleCartClick}>Go to Cart</button>
         </div>
 
         <div className="product-list">
           {filteredProducts.length > 0 ? (
             filteredProducts.map((product) => (
               <div key={product.id} className="product-card">
-                <img src={product.imageUrl} alt={product.productName} />
+                <img src={`/${product.image}`} alt={product.productName} />
                 <h2>{product.productName}</h2>
-                <p>Price: ${product.price}</p>
+                <p>Price: Rs.{product.price}</p>
                 <p>Category: {product.category}</p>
                 <p>{product.description}</p>
-                <button onClick={() => handleAddToCart(product)}>Add to Cart</button>
+                <button className="add-to-cart-btn" onClick={() => handleAddToCart(product)}>Add to Cart</button>
               </div>
             ))
           ) : (
@@ -146,8 +148,8 @@ const Unimart = () => {
                   <label>Description:</label>
                   <textarea name="description" />
                 </div>
-                <button type="submit">Upload</button>
-                <button type="button" onClick={handleCloseUploadModal}>Cancel</button>
+                <button className="submit-btn" type="submit">Upload</button>
+                <button className="cancel-btn" type="button" onClick={handleCloseUploadModal}>Cancel</button>
               </form>
             </div>
           </div>
