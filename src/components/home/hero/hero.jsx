@@ -10,7 +10,7 @@ const Hero = () => {
   const navigate = useNavigate();
 
   const handleSignUpClick = () => {
-    navigate("/login"); // Replace with your actual sign-up page route
+    navigate("/about-container"); // Replace with your actual sign-up page route
   };
 
   return (
