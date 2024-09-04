@@ -1,7 +1,13 @@
 import React from "react";
 import "./courses.css";
+import { useNavigate } from "react-router-dom";
 
 const OnlineCourses = () => {
+  const navigate = useNavigate(); 
+  const handleClick = () => {
+    navigate('/book'); 
+  };
+
   return (
     <section className="online">
       <div className="container-online">
@@ -11,7 +17,7 @@ const OnlineCourses = () => {
         </div>
         <div className="content grid3">
           <div className="box">
-            <div className="img">
+            <div className="img" onClick={handleClick}>
               <img src="./images/courses/online/o1.png" alt="UI/UX Design" />
               <img src="./images/courses/online/o1.1.png" alt="UI/UX Design Hover" className="show" />
             </div>
@@ -19,7 +25,7 @@ const OnlineCourses = () => {
             <span>25 Courses</span>
           </div>
           <div className="box">
-            <div className="img">
+            <div className="img"onClick={handleClick}>
               <img src="./images/courses/online/o2.png" alt="Art & Design" />
               <img src="./images/courses/online/o2.1.png" alt="Art & Design Hover" className="show" />
             </div>
@@ -27,7 +33,7 @@ const OnlineCourses = () => {
             <span>25 Courses</span>
           </div>
           <div className="box">
-            <div className="img">
+            <div className="img"onClick={handleClick}>
               <img src="./images/courses/online/o3.png" alt="Computer Science" />
               <img src="./images/courses/online/o3.1.png" alt="Computer Science Hover" className="show" />
             </div>
@@ -35,7 +41,7 @@ const OnlineCourses = () => {
             <span>25 Courses</span>
           </div>
           <div className="box">
-            <div className="img">
+            <div className="img"onClick={handleClick}>
               <img src="./images/courses/online/o4.png" alt="Blockchain" />
               <img src="./images/courses/online/o4.1.png" alt="Blockchain Hover" className="show" />
             </div>
@@ -43,7 +49,7 @@ const OnlineCourses = () => {
             <span>25 Courses</span>
           </div>
           <div className="box">
-            <div className="img">
+            <div className="img"onClick={handleClick}>
               <img src="./images/courses/online/o5.png" alt="Marketing" />
               <img src="./images/courses/online/o5.1.png" alt="Marketing Hover" className="show" />
             </div>
@@ -51,7 +57,7 @@ const OnlineCourses = () => {
             <span>25 Courses</span>
           </div>
           <div className="box">
-            <div className="img">
+            <div className="img"onClick={handleClick}>
               <img src="./images/courses/online/o6.png" alt="Data Science" />
               <img src="./images/courses/online/o6.1.png" alt="Data Science Hover" className="show" />
             </div>
