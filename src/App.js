@@ -12,7 +12,8 @@ import { UserContext } from "./components/userContext";
 import EventPage from "./components/Event/EventPage";
 import EventDetails from "./components/Event/viewDetails/EventDetails";
 import About from "./components/about/About";
-
+import Contact from "./components/contact/ContactUs";
+import Unimart from "./components/unimart/unimart";
 function App() {
   const [user, setUser] = useState(null);
   return (
@@ -27,8 +28,9 @@ function App() {
           <Route path="/book" element={<Book />} />
           <Route path="/subsubjects/:id" element={<SubSubjects />} />
           <Route path="/courseBooks" element={<CourseBooks/>}/>
-  <Route path="/about-container" element={<About />} />
-     
+          <Route path="/about-container" element={<About />} />
+          <Route path="/contact" element={<Contact/>}/>
+          <Route path="/unimart" element={<Unimart/>}/>
         </Routes>
         
         </UserContext.Provider>
