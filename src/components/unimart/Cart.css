@@ -1,91 +1,129 @@
 /* Cart.css */
 
 .cart-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  main {
-    flex: 1;
-    padding: 20px;
-    background-color: #f4f4f4;
-  }
-  
- .cart-container h1 {
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 2rem;
-    color: #333;
-  }
-  
-  .cart-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .cart-item {
-    display: flex;
-    align-items: center;
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 15px;
-    margin: 10px 0;
-    width: 80%;
-    max-width: 800px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .cart-item img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-right: 20px;
-  }
-  
-  .cart-item h2 {
-    flex: 1;
-    font-size: 1.5rem;
-    color: #333;
-  }
-  
-  .cart-item p {
-    font-size: 1rem;
-    color: #666;
-    margin: 5px 0;
-  }
-  
-  .cart-item button {
-    background-color: #ff6b6b;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    display: flex;
-    align-items: center;
-    font-size: 1rem;
-  }
-  
-  .cart-item button:hover {
-    background-color: #ff4b4b;
-  }
-  
-  .cart-item button svg {
-    margin-right: 5px;
-    font-size: 1.2rem;
-  }
-  
-  .cart-item .remove-icon {
-    font-size: 1.5rem;
-    margin-right: 8px;
-  }
-  
-  .cart-item .price-tag {
-    font-weight: bold;
-    color: #333;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.cart-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #333;
+}
+
+.cart-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px 0;
+  width: 80%;
+  max-width: 800px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.cart-item h2 {
+  flex: 1;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.cart-item p {
+  font-size: 1rem;
+  color: #666;
+  margin: 5px 0;
+}
+
+.cart-item button {
+  background-color: #ff6b6b;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.cart-item button:hover {
+  background-color: #ff4b4b;
+}
+
+.cart-item button svg {
+  margin-right: 5px;
+  font-size: 1.2rem;
+}
+
+.cart-item .remove-icon {
+  font-size: 1.5rem;
+  margin-right: 8px;
+}
+
+.cart-item .price-tag {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Order Summary Styles */
+
+.order-summary {
+  background-color: #ffffff; /* White background for contrast */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  padding: 20px; /* Padding for inner spacing */
+  margin-top: 20px; /* Space above the order summary */
+  text-align: center; /* Centered text */
+}
+
+.order-summary h2 {
+  font-size: 1.8rem; /* Slightly larger font size for the heading */
+  color: #333; /* Dark color for better readability */
+  margin-bottom: 15px; /* Space below the heading */
+}
+
+.order-summary p {
+  font-size: 1.2rem; /* Increased font size for better visibility */
+  color: #666; /* Lighter color for secondary text */
+  margin: 5px 0; /* Consistent vertical spacing */
+}
+
+.checkout-button {
+  background-color: #28a745; /* Green background for the checkout button */
+  color: #fff; /* White text */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; /* Padding for the button */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 1.2rem; /* Larger font size for the button */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  margin-top: 15px; /* Space above the button */
+}
+
+.checkout-button:hover {
+  background-color: #218838; /* Darker green on hover */
+}
